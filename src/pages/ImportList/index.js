@@ -1,5 +1,5 @@
 import React from 'react';
-import ImportListDatas from '../../components/ImportList/index.jsx'
+import ImportListDatas from '../../components/ImportList/index.js'
 
 function ImportList() {
 	return (
