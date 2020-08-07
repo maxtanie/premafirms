@@ -1,0 +1,30 @@
+    <Row className="mt-2">
+                        {arrayVariantList.map(({ id, name }) => {
+                            if (id === 1) {
+                                return (
+                                    <div className="d-flex variants-lists">
+                                        <Form>
+                                            <Form.Group controlId="formBasicCheckbox">
+                                                <Form.Check type="checkbox" name={name} />
+                                            </Form.Group>
+                                        </Form>
+
+
+                                        <Form>
+                                            <Form.Group controlId="formBasicCheckbox">
+                                                <Form.Label className="cursor-pointer" onClick={() => handleShowVariantsList(`${name.toLowerCase()}`)}>{name}</Form.Label>
+                                            </Form.Group>
+                                        </Form>
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <Form className="d-flex">
+                                        <Form.Group controlId="formBasic">
+                                            <Form.Label className="variants-lists cursor-pointer" onClick={() => handleShowVariantsList(`${name.toLowerCase()}`)}>{name}</Form.Label>
+                                        </Form.Group>
+                                    </Form>
+                                )
+                            }
+                        })}
+                    </Row>

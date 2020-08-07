@@ -1,0 +1,91 @@
+.sidebar-main {
+  background-color: #343a40;
+  background-image: url("/images/sidebar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  color: white;
+  min-height: 100%;
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sidebar-main .tab-flex-column {
+  list-style: none;
+  padding: unset;
+}
+
+.sidebar-main .tab-flex-column {
+  padding-top: 10px !important;
+}
+
+.sidebar-main .tab-flex-column .tab-menu {
+  display: block;
+  width: 100%;
+  padding: 2px 10px 2px 10px !important;
+  line-height: 2.5;
+  color: white;
+  /* background: transparent;
+  transition: background .3s ease-in-out; */
+}
+
+.sidebar-main .tab-flex-column .tab-menu:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.sidebar-main .tab-flex-column .menu-active {
+  background-color: #e91e63 !important;
+  border-radius: 4px;
+}
+
+.sidebar-main .tab-flex-column .main-menu-active {
+  background-color: hsla(0, 0%, 78%, 0.2) !important;
+  border-radius: 4px;
+}
+
+.sidebar-main .tab-flex-column span {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar-main .tab-flex-column .font-style {
+  cursor: pointer;
+  /* ADDED CURSOR POINTER TO PERMITTED TO USER HAVE MORE INFORMATIONS ABOUT ACTION TO DO */
+  float: right;
+  margin-top: 13px;
+  transition: .3s ease-in-out;
+  /* ADDED TRANSITION TO .3S IN ORDER PERMITTED TO RETURN BACK TO CARET-DOWN THE ANIMATION */
+}
+
+.sidebar-main .tab-flex-column .font-style-rotate {
+  cursor: pointer;
+  float: right;
+  transition: .3s ease-in-out;
+  /* ADDED TRANSITION TO .3S IN ORDER PERMITTED TO ACTIVE THE ANIMATION */
+  margin-top: 13px;
+  transform: rotate(180deg);
+}
+
+
+
+.sidebar-main .tab-flex-column .menu-hide {
+  max-height: 0px;
+  padding: 10px 0;
+  overflow: hidden;
+  list-style-type: none;
+  transition: max-height 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.sidebar-main .tab-flex-column .menu-show {
+  padding: 10px 0;
+  max-height: 300px;
+  transition: max-height 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.sidebar-main .tab-flex-column .sub-menu {
+  font-size: 15px;
+}
