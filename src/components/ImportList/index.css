@@ -8,15 +8,18 @@ p {
     cursor: pointer;
 }
 
-.w-900 {
+/* .w-900 {
     width: 1000px;
 }
 
+*/
 
 
 .table td,
 .table th {
     padding: 1.3rem 0.8rem !important;
+    font-size: 0.8em !important;
+    vertical-align: 0 !important;
 }
 
 /* END DEFAULT STYLES */

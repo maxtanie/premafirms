@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Container, Row, Col, Media, Form, Table } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import CKEditor from 'ckeditor4-react';
 import './index.css';
 
 function ImportListDatas() {
 
     const [detailsImportLists, setDetailsImportLists] = useState(Boolean);
-    const [variantsLists, setVariantsLists] = useState(Boolean);
+
     let [activeImportList, setActiveImportList] = useState(Boolean);
     let [checkAll, setCheckAll] = useState(Boolean);
 
@@ -39,12 +40,16 @@ function ImportListDatas() {
 
     }
 
-    function handleCheck(check) {
+    function handleCheck() {
         checkAll = true;
         setCheckAll(checkAll);
 
     }
 
+
+    function customHandler(evt) {
+        console.log(evt);
+    }
 
 
 
@@ -168,11 +173,26 @@ function ImportListDatas() {
         return (
             <Media className="block-data-list">
                 <Media.Body>
-                    <h2>Description</h2>
+                    <CKEditor
+                        data="I'm a CKEditor 4 instance."
+                        config={{
+                            toolbar: [
+                                ['Bold', 'Italic'],
+                                ['Cut', 'Copy'],
+
+                            ]
+                        }}
+                        onFocus={customHandler}
+                        onBlur={customHandler}
+                        onChange={customHandler}
+                        onSelectionChange={customHandler}
+                    />
                 </Media.Body>
             </Media>
         )
     }
+
+
 
     function Variants(props) {
 
@@ -185,12 +205,12 @@ function ImportListDatas() {
             {
                 id: 2,
                 name: "SKU",
-                width: "18%"
+                width: "6%"
             },
             {
                 id: 3,
                 name: "Color",
-                width: "18%"
+                width: "13%"
             },
             {
                 id: 4,
@@ -205,7 +225,22 @@ function ImportListDatas() {
             {
                 id: 6,
                 name: "Price",
-                width: "18%"
+                width: "15%"
+            },
+            {
+                id: 7,
+                name: "Profit",
+                width: "8%"
+            },
+            {
+                id: 8,
+                name: "Compared at price",
+                width: "20%"
+            },
+            {
+                id: 9,
+                name: "Inventory",
+                width: "8%"
             }
         ];
 
@@ -214,70 +249,118 @@ function ImportListDatas() {
                 id: 1,
                 useAllImg: "https://ae01.alicdn.com/kf/HTB13UIXV6DpK1RjSZFrq6y78VXaN/Paquet-de-5-brosses-dents-en-bambou-pour-adultes-soies-souples-cologiques-cepillo-dientes-bambu-brosse.jpg",
                 useAllAlt: "img brush",
-                useAllWidth: "12%",
+                useAllWidth: "8%",
                 skuValue: "22752863-7-holds",
-                skuWidth: "18%",
+                skuWidth: "12%",
                 colorValue: "7 Holds",
-                colorWidth: "18%",
+                colorWidth: "12%",
                 costYen: "¥ 27.31",
                 costUs: "US $3.91",
                 costWidth: "8%",
                 shippingText: "N/A",
                 shippingWidth: "15%",
                 priceYenValue: "¥ 7.82",
-                priceWidth: "18%"
+                priceWidth: "15%",
+                profitYen: "¥42.30",
+                profitWidth: "4%",
+                comparedAtPriceValue: "¥ 22.00",
+                comparedAtPriceWidth: "25%",
+                inventoryNumber: 0,
+                inventoryWidth: "3%"
             },
             {
                 id: 2,
                 useAllImg: "https://ae01.alicdn.com/kf/HTB13UIXV6DpK1RjSZFrq6y78VXaN/Paquet-de-5-brosses-dents-en-bambou-pour-adultes-soies-souples-cologiques-cepillo-dientes-bambu-brosse.jpg",
                 useAllAlt: "img brush",
-                useAllWidth: "12%",
-                skuValue: "22752863-circular",
-                skuWidth: "18%",
-                colorValue: "Circular",
-                colorWidth: "18%",
-                costYen: "¥ 21.72",
-                costUs: "US $3.11",
+                useAllWidth: "8%",
+                skuValue: "22752863-7-holds",
+                skuWidth: "12%",
+                colorValue: "7 Holds",
+                colorWidth: "12%",
+                costYen: "¥ 27.31",
+                costUs: "US $3.91",
                 costWidth: "8%",
                 shippingText: "N/A",
                 shippingWidth: "15%",
-                priceYenValue: "¥ 6.22",
-                priceWidth: "18%"
+                priceYenValue: "¥ 7.82",
+                priceWidth: "15%",
+                profitYen: "¥42.30",
+                profitWidth: "4%",
+                comparedAtPriceValue: "¥ 22.00",
+                comparedAtPriceWidth: "25%",
+                inventoryNumber: 8764,
+                inventoryWidth: "3%"
             },
             {
                 id: 3,
                 useAllImg: "https://ae01.alicdn.com/kf/HTB13UIXV6DpK1RjSZFrq6y78VXaN/Paquet-de-5-brosses-dents-en-bambou-pour-adultes-soies-souples-cologiques-cepillo-dientes-bambu-brosse.jpg",
                 useAllAlt: "img brush",
-                useAllWidth: "12%",
-                skuValue: "22752863-flower",
-                skuWidth: "18%",
-                colorValue: "Flower",
-                colorWidth: "18%",
-                costYen: "¥ 21.72",
-                costUs: "US $3.11",
+                useAllWidth: "8%",
+                skuValue: "22752863-7-holds",
+                skuWidth: "12%",
+                colorValue: "7 Holds",
+                colorWidth: "12%",
+                costYen: "¥ 27.31",
+                costUs: "US $3.91",
                 costWidth: "8%",
                 shippingText: "N/A",
                 shippingWidth: "15%",
-                priceYenValue: "¥ 6.22",
-                priceWidth: "18%"
+                priceYenValue: "¥ 7.82",
+                priceWidth: "15%",
+                profitYen: "¥42.30",
+                profitWidth: "4%",
+                comparedAtPriceValue: "¥ 22.00",
+                comparedAtPriceWidth: "25%",
+                inventoryNumber: 37,
+                inventoryWidth: "3%"
             },
             {
                 id: 4,
                 useAllImg: "https://ae01.alicdn.com/kf/HTB13UIXV6DpK1RjSZFrq6y78VXaN/Paquet-de-5-brosses-dents-en-bambou-pour-adultes-soies-souples-cologiques-cepillo-dientes-bambu-brosse.jpg",
-                useAllAlt: "img heart",
-                useAllWidth: "12%",
-                skuValue: "22752863-heart",
-                skuWidth: "18%",
-                colorValue: "Heart",
-                colorWidth: "18%",
-                costYen: "¥ 21.72",
-                costUs: "US $3.11",
+                useAllAlt: "img brush",
+                useAllWidth: "8%",
+                skuValue: "22752863-7-holds",
+                skuWidth: "12%",
+                colorValue: "7 Holds",
+                colorWidth: "12%",
+                costYen: "¥ 27.31",
+                costUs: "US $3.91",
                 costWidth: "8%",
                 shippingText: "N/A",
                 shippingWidth: "15%",
-                priceYenValue: "¥ 6.22",
-                priceWidth: "18%"
-            }
+                priceYenValue: "¥ 7.82",
+                priceWidth: "15%",
+                profitYen: "¥42.30",
+                profitWidth: "4%",
+                comparedAtPriceValue: "¥ 22.00",
+                comparedAtPriceWidth: "25%",
+                inventoryNumber: 8855,
+                inventoryWidth: "3%"
+            },
+            {
+                id: 5,
+                useAllImg: "https://ae01.alicdn.com/kf/HTB13UIXV6DpK1RjSZFrq6y78VXaN/Paquet-de-5-brosses-dents-en-bambou-pour-adultes-soies-souples-cologiques-cepillo-dientes-bambu-brosse.jpg",
+                useAllAlt: "img brush",
+                useAllWidth: "8%",
+                skuValue: "22752863-7-holds",
+                skuWidth: "12%",
+                colorValue: "7 Holds",
+                colorWidth: "12%",
+                costYen: "¥ 27.31",
+                costUs: "US $3.91",
+                costWidth: "8%",
+                shippingText: "N/A",
+                shippingWidth: "15%",
+                priceYenValue: "¥ 7.82",
+                priceWidth: "15%",
+                profitYen: "¥42.30",
+                profitWidth: "4%",
+                comparedAtPriceValue: "¥ 22.00",
+                comparedAtPriceWidth: "25%",
+                inventoryNumber: 17656,
+                inventoryWidth: "3%"
+            },
+      
         ]
 
         return (
@@ -310,7 +393,7 @@ function ImportListDatas() {
                                         if (id === 1) {
                                             return (
 
-                                                <th style={{ width: { width } }} key={id}>
+                                                <th style={{ width: "10%" }} key={id}>
                                                     <div className="d-flex align-items-center">
                                                         <input type="checkbox" className="mr-2" id="selectAll" onClick={() => handleCheck()} />
                                                         {name}
@@ -320,7 +403,7 @@ function ImportListDatas() {
                                             )
                                         }
                                         return (
-                                            <th style={{ width: { width } }} key={id}>{name}</th>
+                                            <th style={{ width: "10%" }} key={id}>{name}</th>
                                         )
                                     })}
                                 </tr>
@@ -329,7 +412,10 @@ function ImportListDatas() {
                                 <tr>
                                     <td colSpan="4"></td>
                                     <td>Aland islands</td>
-                                    <td>Change all my prices</td>
+                                    <td>Change all prices</td>
+                                    <td colSpan="1"></td>
+                                    <td>Change all prices</td>
+                                    <td colSpan="1"></td>
                                 </tr>
                                 {variantsDataTable.map((data) => {
                                     console.log(data)
@@ -365,6 +451,15 @@ function ImportListDatas() {
                                             </td>
                                             <td style={{ width: `${data.priceWidth}` }} className="padding">
                                                 <Form.Control type="text" value={data.priceYenValue} />
+                                            </td>
+                                            <td style={{ width: `${data.profitWidth}` }} className="padding">
+                                                <div className="yan-cost"><b>{data.profitYen}</b></div>
+                                            </td>
+                                            <td style={{ width: `${data.comparedAtPriceWidth}` }} className="padding">
+                                                <Form.Control type="text" value={data.comparedAtPriceValue} />
+                                            </td>
+                                            <td style={{ width: `${data.inventoryWidth}` }} className="padding">
+                                                {data.inventoryNumber}
                                             </td>
                                         </tr>
                                     )
@@ -447,13 +542,10 @@ function ImportListDatas() {
                                 </div>
                             </Col>
 
-
                         </Row>
 
                     </div>
-
                 </Row>
-
             </Container>
         )
     }
